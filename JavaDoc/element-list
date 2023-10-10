@@ -1,0 +1,7 @@
+application.logic
+application.services
+domain
+infrastructure.console
+infrastructure.console.state
+infrastructure.memory
+repositoryInterface
