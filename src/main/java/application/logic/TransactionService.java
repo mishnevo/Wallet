@@ -42,7 +42,7 @@ public class TransactionService implements TransactionServiceI {
     public boolean debit(int id, double amount, String login) {
         Transaction newTransaction = new Transaction(id, TransactionType.DEBIT, amount);
         Client client = clientRepository.findClient(login);
-        if(transactionRepository.validateID(newTransaction) && transactionRepository.validateAmount(newTransaction, client)){
+        if(transactionRepository.validateId(newTransaction) && transactionRepository.validateAmount(newTransaction, client)){
             transactionRepository.addTransaction(newTransaction);
             transactionRepository.addTransactionToHistory(newTransaction,clientRepository.findClient(login));
             clientRepository.addInActionHistory(client.getLogin(), "Debit transaction");
@@ -63,7 +63,7 @@ public class TransactionService implements TransactionServiceI {
     public boolean credit(int id, double amount, String login) {
         Transaction newTransaction = new Transaction(id, TransactionType.CREDIT, amount);
         Client client = clientRepository.findClient(login);
-        if(transactionRepository.validateID(newTransaction)){
+        if(transactionRepository.validateId(newTransaction)){
             transactionRepository.addTransaction(newTransaction);
             transactionRepository.addTransactionToHistory(newTransaction,clientRepository.findClient(login));
             clientRepository.addInActionHistory(client.getLogin(), "Credit transaction");

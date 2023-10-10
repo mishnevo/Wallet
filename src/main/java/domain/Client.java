@@ -1,10 +1,12 @@
 package domain;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 /**
  * Класс, описывающий сущность клиента
  */
 @Getter
+@EqualsAndHashCode
 public class Client {
     /**
      * Поле, обозначающее логин клиента

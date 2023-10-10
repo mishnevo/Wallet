@@ -59,7 +59,7 @@ public class TransactionInMemory implements TransactionRepository {
      * @return Результат проверки
      */
     @Override
-    public boolean validateID(Transaction transaction) {
+    public boolean validateId(Transaction transaction) {
         return !transactionInMemory.containsKey(transaction.getId());
     }
     /**

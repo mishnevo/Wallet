@@ -23,7 +23,7 @@ public interface TransactionRepository {
      * @param transaction Транзакция
      * @return Результат проверки
      */
-    boolean validateID(Transaction transaction);
+    boolean validateId(Transaction transaction);
     /**
      * Добавление транзакции для каждого клиента в его историю
      * @param transaction Транзакция
